@@ -1,0 +1,29 @@
+name: Deploy Next.js to Github Pages
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup yarn
+        uses: mskelton/setup-yarn@v1
+        with:
+          node-version: '16.17.1'
+      - name: Build
+        run: |
+          yarn
+          yarn build
+          yarn export
+          touch out/.nojekyll
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.4.0
+        with:
+          branch: gh-pages
+          folder: out
+
