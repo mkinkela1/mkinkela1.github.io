@@ -18,7 +18,7 @@ export default function Home() {
             <Image
               className="icon"
               src={Linkedin}
-              alt="linkedin"
+              alt="LinkedIn icon"
               width={50}
               height={50}
             />
@@ -27,7 +27,7 @@ export default function Home() {
             <Image
               className="icon"
               src={Github}
-              alt="github"
+              alt="Github icon"
               width={45}
               height={45}
             />
