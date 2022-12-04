@@ -1,11 +1,10 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { Html } from "next/document";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Html lang="en">
+    <>
       <Head>
         <title>Matteo Kinkela - software engineer</title>
         <meta name="description" content="Matteo Kinkela - software engineer" />
@@ -16,6 +15,6 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       <Component {...pageProps} />
-    </Html>
+    </>
   );
 }
