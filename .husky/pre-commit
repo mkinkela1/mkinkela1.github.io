@@ -1,0 +1,31 @@
+#!/bin/sh
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+# cd to project root
+cd "$SCRIPT_DIR/.." || exit
+
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+NC="\033[0m" # No Color
+
+changes=$(git diff --cached --name-only | grep "^.*\.ts[x]?$")
+if [ -n "$changes" ]; then
+    printf "${NC}Checking linting..."
+    (yarn lint)
+    if [ $? -eq 0 ]; then
+        printf "${GREEN}Linting successful${NC}\n"
+    else
+        printf "${RED}Linting failed${NC}\n"
+        exit 1
+    fi
+
+    printf "Checking export...\n"
+    (yarn && yarn build && yarn export && touch out/.nojekyll)
+    if [ $? -eq 0 ]; then
+        printf "${GREEN}Export check successful${NC}\n"
+    else
+        printf "${RED}Export check failed${NC}\n"
+        exit 1
+    fi
+fi
