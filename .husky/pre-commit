@@ -9,7 +9,7 @@ RED="\033[0;31m"
 GREEN="\033[0;32m"
 NC="\033[0m" # No Color
 
-changes=$(git diff --cached --name-only | grep "^.*\.ts[x]?$")
+changes=$(git diff --cached --name-only | grep ".*\.ts")
 if [ -n "$changes" ]; then
     printf "${NC}Checking linting..."
     (yarn lint)

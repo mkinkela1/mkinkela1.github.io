@@ -4,6 +4,8 @@ import Linkedin from "../public/linkedin.svg";
 import Github from "../public/github.svg";
 import Link from "next/link";
 
+console.log("bla");
+
 export default function Home() {
   return (
     <div className={styles.container}>
