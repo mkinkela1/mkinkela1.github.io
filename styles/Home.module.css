@@ -28,12 +28,12 @@
     font-size: 1.5rem;
 }
 
-.icon {
-    fill: white !important;
-}
-
 .iconsRow {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.profilePicture {
+    margin-bottom: 100px;
 }
