@@ -16,6 +16,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment: master
+    env:
+      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+      CONTENTFUL_PREVIEW_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_PREVIEW_ACCESS_TOKEN }}
+      CONTENTFUL_PREVIEW_SECRET: ${{ secrets.CONTENTFUL_PREVIEW_SECRET }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -24,11 +29,6 @@ jobs:
         with:
           node-version: '16.17.1'
       - name: Build
-        secrets:
-          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-          CONTENTFUL_PREVIEW_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_PREVIEW_ACCESS_TOKEN }}
-          CONTENTFUL_PREVIEW_SECRET: ${{ secrets.CONTENTFUL_PREVIEW_SECRET }}
         run: |
           yarn
           yarn build
