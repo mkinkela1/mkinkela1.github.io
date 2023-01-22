@@ -3,6 +3,14 @@ name: Deploy Next.js to Github Pages
 on:
   push:
     branches: [ master ]
+  workflow_call:
+    inputs:
+      config-path:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: true
 
 jobs:
   build:
@@ -16,7 +24,7 @@ jobs:
         with:
           node-version: '16.17.1'
       - name: Build
-        env:
+        with:
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
           CONTENTFUL_PREVIEW_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_PREVIEW_ACCESS_TOKEN }}
