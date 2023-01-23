@@ -100,8 +100,8 @@ export default function Post({ ...content }: IContent) {
 
 export async function getStaticPaths() {
   const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID!,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
   const data = await client.getEntries();
@@ -119,8 +119,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { id } }: IParams) {
   const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID!,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
   const data = await client.getEntry(id);
