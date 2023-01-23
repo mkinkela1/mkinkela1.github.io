@@ -7,9 +7,9 @@ import styled from "styled-components";
 
 const Row = styled.div`
   display: flex;
-  gap: 50px;
+  gap: 5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${(props) => props.theme.width.maxWidthBreakpoint}) {
     flex-direction: column;
     align-items: center;
     gap: 0;

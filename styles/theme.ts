@@ -14,8 +14,8 @@ export const defaultTheme: DefaultTheme = {
     green: "1px solid #20c997",
   },
   width: {
-    maxWidth: "800px",
-    minWidth: "300px",
-    maxWidthBreakpoint: "768px",
+    maxWidth: "80rem",
+    minWidth: "30rem",
+    maxWidthBreakpoint: "76.8rem",
   },
 };

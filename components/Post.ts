@@ -21,7 +21,7 @@ export const StyledPost = styled.div`
     transition: font-size 0.2s linear 0.1s;
 
     &:hover {
-      font-size: 22px;
+      font-size: 2.2rem;
     }
   }
 
@@ -47,26 +47,26 @@ export const StyledPost = styled.div`
 
   & .title {
     color: ${(props) => props.theme.colors.white};
-    font-size: 32px;
+    font-size: 3.2rem;
     font-weight: 600;
     letter-spacing: -0.016em;
-    line-height: 40px;
+    line-height: 4rem;
     margin-bottom: 10px;
   }
 
   & .tldr {
     color: ${(props) => props.theme.colors.lightGrey};
-    font-size: 22px;
-    line-height: 28px;
+    font-size: 2.2rem;
+    line-height: 2.8rem;
     letter-spacing: 0;
     font-weight: 400;
   }
 
   & .content {
     color: ${(props) => props.theme.colors.lightGrey};
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 200;
-    line-height: 32px;
+    line-height: 3.2rem;
     letter-spacing: -0.003em;
     text-align: justify;
   }

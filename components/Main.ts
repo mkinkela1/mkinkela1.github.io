@@ -10,15 +10,17 @@ export const StyledMain = styled.main`
   margin: 0 auto;
 
   & h1.title {
+    display: flex;
     margin: 0;
     line-height: 1.15;
     font-size: 4rem;
     color: ${(props) => props.theme.colors.lightGrey};
     text-align: center;
+    align-items: flex-end;
 
     &.notFound {
       margin-top: 50px;
-      font-size: 8rem !important;
+      font-size: 10rem !important;
     }
 
     & .greenText {
@@ -29,9 +31,9 @@ export const StyledMain = styled.main`
   & .description {
     text-align: center;
     color: ${(props) => props.theme.colors.lightGrey};
-    margin: 4rem 0;
+    margin: 40px 0;
     line-height: 1.5;
-    font-size: 1.5rem;
+    font-size: 2.2rem;
 
     &.alignJustify {
       text-align: justify !important;
@@ -50,6 +52,6 @@ export const StyledMain = styled.main`
   }
 
   & .profilePicture {
-    margin-bottom: 100px;
+    margin-bottom: 10rem;
   }
 `;

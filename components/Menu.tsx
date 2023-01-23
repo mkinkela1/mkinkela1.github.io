@@ -111,7 +111,7 @@ const StyledMenu = styled.menu`
       & .menuLink {
         color: ${(props) => props.theme.colors.lightGrey};
         text-decoration: none;
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 600;
       }
 

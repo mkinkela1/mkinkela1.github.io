@@ -13,20 +13,20 @@ export const BlogCard = styled.div`
 
   & .title {
     color: ${(props) => props.theme.colors.white};
-    font-size: 24px;
+    font-size: 2.4rem;
     font-weight: bolder;
     margin-bottom: 10px;
   }
 
   & .tldr {
     color: ${(props) => props.theme.colors.lightGrey};
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: lighter;
   }
 
   & .readMore {
     color: ${(props) => props.theme.colors.green};
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: bolder;
     text-decoration: underline;
     text-align: right;
