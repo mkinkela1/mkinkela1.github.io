@@ -3,18 +3,30 @@ import { StyledMain } from "components/Main";
 import Link from "next/link";
 import Image from "next/image";
 import Stop from "public/stop.png";
+import styled from "styled-components";
+
+const Row = styled.div`
+  display: flex;
+  gap: 50px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+`;
 
 export default function PageNotFound() {
   return (
     <Container>
       <StyledMain>
-        <div style={{ display: "flex", gap: 50 }}>
+        <Row>
           <Image src={Stop} alt="stop" width={200} height={200} />
           <h1 className="title notFound">
             <span className="greenText">4</span>0
             <span className="greenText">4</span>
           </h1>
-        </div>
+        </Row>
         <p className="description alignJustify">
           Oops, it looks like you&apos;ve stumbled upon a page that doesn&apos;t
           exist. Don&apos;t worry, it happens to the best of us. But don&apos;t

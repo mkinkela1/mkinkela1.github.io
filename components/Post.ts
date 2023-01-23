@@ -2,20 +2,20 @@ import styled from "styled-components";
 
 export const StyledPost = styled.div`
   width: calc(100% - 20px);
-  min-width: 300px;
-  max-width: 800px;
-  border-radius: 10px;
+  min-width: ${(props) => props.theme.width.minWidth};
+  max-width: ${(props) => props.theme.width.maxWidth};
+  border-radius: ${(props) => props.theme.borderRadius};
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   & .greenText {
-    color: #20c997;
+    color: ${(props) => props.theme.colors.green};
   }
 
   & .link {
-    color: #20c997;
+    color: ${(props) => props.theme.colors.green};
     font-weight: bold;
     text-decoration: underline;
     transition: font-size 0.2s linear 0.1s;
@@ -32,7 +32,7 @@ export const StyledPost = styled.div`
 
     & li::before {
       content: "\\2022";
-      color: #20c997;
+      color: ${(props) => props.theme.colors.green};
       font-weight: bold;
       display: inline-flex;
       width: 1em;
@@ -46,7 +46,7 @@ export const StyledPost = styled.div`
   }
 
   & .title {
-    color: #fff;
+    color: ${(props) => props.theme.colors.white};
     font-size: 32px;
     font-weight: 600;
     letter-spacing: -0.016em;
@@ -55,7 +55,7 @@ export const StyledPost = styled.div`
   }
 
   & .tldr {
-    color: #e8eef1;
+    color: ${(props) => props.theme.colors.lightGrey};
     font-size: 22px;
     line-height: 28px;
     letter-spacing: 0;
@@ -63,7 +63,7 @@ export const StyledPost = styled.div`
   }
 
   & .content {
-    color: #e8eef1;
+    color: ${(props) => props.theme.colors.lightGrey};
     font-size: 20px;
     font-weight: 200;
     line-height: 32px;

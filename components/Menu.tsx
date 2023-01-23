@@ -68,19 +68,19 @@ export default function Menu() {
 
 const StyledMenu = styled.menu`
   width: 100%;
-  background: #0f0e0e;
+  background: ${(props) => props.theme.colors.black};
   margin: 0;
   padding: 10px;
 
   & .menuContainer {
-    max-width: 800px;
+    max-width: ${(props) => props.theme.width.maxWidth};
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${(props) => props.theme.width.maxWidthBreakpoint}) {
       flex-direction: column;
       align-items: center;
     }
@@ -90,7 +90,7 @@ const StyledMenu = styled.menu`
     margin: 20px;
     visibility: hidden;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${(props) => props.theme.width.maxWidthBreakpoint}) {
       align-self: flex-start;
       visibility: visible;
     }
@@ -101,7 +101,7 @@ const StyledMenu = styled.menu`
     display: flex;
     flex-direction: row;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${(props) => props.theme.width.maxWidthBreakpoint}) {
       flex-direction: column;
     }
 
@@ -109,19 +109,19 @@ const StyledMenu = styled.menu`
       padding: 10px 20px;
 
       & .menuLink {
-        color: #e8eef1;
+        color: ${(props) => props.theme.colors.lightGrey};
         text-decoration: none;
         font-size: 16px;
         font-weight: 600;
       }
 
       & .menuLink:hover {
-        color: #20c997;
+        color: ${(props) => props.theme.colors.green};
         transition: color 0.2s linear 0.1s;
       }
 
       & .menuLink.active {
-        color: #20c997;
+        color: ${(props) => props.theme.colors.green};
         text-decoration: underline;
       }
     }

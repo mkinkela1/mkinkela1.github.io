@@ -6,14 +6,14 @@ export const StyledMain = styled.main`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  max-width: 800px;
+  max-width: ${(props) => props.theme.width.maxWidth};
   margin: 0 auto;
 
   & h1.title {
     margin: 0;
     line-height: 1.15;
     font-size: 4rem;
-    color: #e8eef1;
+    color: ${(props) => props.theme.colors.lightGrey};
     text-align: center;
 
     &.notFound {
@@ -22,13 +22,13 @@ export const StyledMain = styled.main`
     }
 
     & .greenText {
-      color: #20c997;
+      color: ${(props) => props.theme.colors.green};
     }
   }
 
   & .description {
     text-align: center;
-    color: #e8e8e9;
+    color: ${(props) => props.theme.colors.lightGrey};
     margin: 4rem 0;
     line-height: 1.5;
     font-size: 1.5rem;
@@ -38,7 +38,7 @@ export const StyledMain = styled.main`
     }
 
     & .link {
-      color: #20c997;
+      color: ${(props) => props.theme.colors.green};
       text-decoration: underline;
     }
   }
