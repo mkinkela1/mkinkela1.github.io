@@ -56,7 +56,7 @@ export default function Menu() {
                   pathname === "/contact" ? "active" : ""
                 }`}
               >
-                Contact
+                Lets talk
               </Link>
             </li>
           </ul>
@@ -123,6 +123,10 @@ const StyledMenu = styled.menu`
       & .menuLink.active {
         color: ${(props) => props.theme.colors.green};
         text-decoration: underline;
+      }
+
+      &:last-child {
+        border: ${(props) => props.theme.borders.green};
       }
     }
   }

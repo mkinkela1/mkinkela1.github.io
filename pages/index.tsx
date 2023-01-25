@@ -1,24 +1,33 @@
 import Image from "next/image";
 import Linkedin from "public/linkedin.svg";
 import Github from "public/github.svg";
-import ProfilePic from "public/profilePicture.png";
+import ProfilePic from "public/profilePicture.webp";
 import Link from "next/link";
 import { Container } from "components/Container";
 import { StyledMain } from "components/Main";
+import { TitleRow } from "components/TitleRow";
 
 export default function Home() {
   return (
     <Container>
-      <StyledMain>
-        <Image
-          src={ProfilePic}
-          alt="Profile picture"
-          width={200}
-          height={200}
-          className="profilePicture"
-        />
-        <h1 className="title">Matteo Kinkela</h1>
-        <p className="description">Software Engineer</p>
+      <StyledMain className="center">
+        <TitleRow>
+          <Image
+            src={ProfilePic}
+            alt="Profile picture"
+            width={300}
+            height={300}
+            className="profilePicture"
+          />
+          <div className="col">
+            <h1 className="title">
+              Hi!
+              <br />
+              I&apos;m <span className="greenText">Matteo</span>,
+            </h1>
+            <p className="description">a software developer.</p>
+          </div>
+        </TitleRow>
         <div className="iconsRow">
           <Link
             href="https://www.linkedin.com/in/matteo-kinkela"

@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Matteo Kinkela - software engineer</title>
         <meta name="description" content="Matteo Kinkela - software engineer" />
-        <link rel="icon" href="/profilePicture.png" />
+        <link rel="icon" href="/profilePicture.webp" />
         <meta
           name="google-site-verification"
           content="jI9gtzysCR3p9InY00qz69ZAhR5YrkkjsIn46HBz3OU"

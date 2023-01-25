@@ -9,14 +9,24 @@ export const StyledMain = styled.main`
   max-width: ${(props) => props.theme.width.maxWidth};
   margin: 0 auto;
 
+  &.center {
+    justify-content: center !important;
+    height: calc(100vh - 80px);
+  }
+
+  @media (max-width: ${(props) => props.theme.width.maxWidthBreakpoint}) {
+    &.center {
+      justify-content: flex-start;
+      height: auto;
+    }
+  }
+
   & h1.title {
-    display: flex;
-    margin: 0;
     line-height: 1.15;
-    font-size: 4rem;
+    font-size: 6rem;
     color: ${(props) => props.theme.colors.lightGrey};
-    text-align: center;
-    align-items: flex-end;
+    text-align: left;
+    margin: 0;
 
     &.notFound {
       margin-top: 50px;
@@ -29,11 +39,10 @@ export const StyledMain = styled.main`
   }
 
   & .description {
-    text-align: center;
     color: ${(props) => props.theme.colors.lightGrey};
-    margin: 40px 0;
     line-height: 1.5;
     font-size: 2.2rem;
+    margin: 0;
 
     &.alignJustify {
       text-align: justify !important;
