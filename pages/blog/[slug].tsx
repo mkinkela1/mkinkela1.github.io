@@ -10,7 +10,7 @@ import { StyledMain } from "components/Main";
 
 interface IParams {
   params: {
-    id: string;
+    slug: string;
   };
 }
 
@@ -34,6 +34,7 @@ interface IContent {
       };
     };
     content: object;
+    slug: string;
   };
 }
 
@@ -110,20 +111,24 @@ export async function getStaticPaths() {
     // @ts-ignore
     paths: data.items.map((post: IContent) => ({
       params: {
-        id: post.sys.id,
+        slug: post.fields.slug,
       },
     })),
     fallback: false,
   };
 }
 
-export async function getStaticProps({ params: { id } }: IParams) {
+export async function getStaticProps({ params: { slug } }: IParams) {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  const data = await client.getEntry(id);
+  const data = await client.getEntries({
+    content_type: "test",
+    limit: 1,
+    "fields.slug": slug,
+  });
 
-  return { props: { ...data } };
+  return { props: { ...data.items[0] } };
 }

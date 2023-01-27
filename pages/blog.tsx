@@ -15,6 +15,7 @@ interface IContent {
   fields: {
     title: string;
     tldr: string;
+    slug: string;
   };
 }
 
@@ -26,11 +27,12 @@ export default function Blog({ data }: IData) {
   return (
     <Container>
       <StyledMain>
+        <pre style={{ color: "#fff" }}>{JSON.stringify(data, null, 2)}</pre>
         {data.map((post: IContent) => (
           <BlogCard key={post.sys.id}>
             <div className="title">{post.fields.title}</div>
             <div className="tldr">{post.fields.tldr}</div>
-            <Link href={`/blog/${post.sys.id}`} className="readMore">
+            <Link href={`/blog/${post.fields.slug}`} className="readMore">
               Read more
             </Link>
           </BlogCard>
