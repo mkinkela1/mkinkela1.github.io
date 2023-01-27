@@ -27,7 +27,6 @@ export default function Blog({ data }: IData) {
   return (
     <Container>
       <StyledMain>
-        <pre style={{ color: "#fff" }}>{JSON.stringify(data, null, 2)}</pre>
         {data.map((post: IContent) => (
           <BlogCard key={post.sys.id}>
             <div className="title">{post.fields.title}</div>
