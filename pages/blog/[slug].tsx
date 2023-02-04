@@ -56,7 +56,7 @@ const options = {
   },
   renderNode: {
     [BLOCKS.PARAGRAPH]: (_: any, children: any) => (
-      <p className="content">{children}</p>
+      <div className="content">{children}</div>
     ),
     [BLOCKS.OL_LIST]: (_: any, children: any) => (
       <ol className="content">{children}</ol>
@@ -90,12 +90,12 @@ export default function Post({ ...content }: IContent) {
           )}
 
           <div className="title">{content.fields.title}</div>
-          <p className="content">
+          <div className="content">
             {documentToReactComponents(
               content.fields.content as Document,
               options
             )}
-          </p>
+          </div>
         </StyledPost>
       </StyledMain>
     </Container>

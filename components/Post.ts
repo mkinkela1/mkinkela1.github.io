@@ -39,9 +39,13 @@ export const StyledPost = styled.div`
       margin-left: -1em;
     }
 
-    & li p {
+    & li.content {
+      margin: 0;
+    }
+
+    & li div {
       display: inline-flex;
-      margin: 10px;
+      margin: 0;
     }
   }
 
@@ -63,12 +67,14 @@ export const StyledPost = styled.div`
   }
 
   & .content {
+    display: inline-block;
     color: ${(props) => props.theme.colors.lightGrey};
     font-size: 2rem;
     font-weight: 200;
     line-height: 3.2rem;
     letter-spacing: -0.003em;
     text-align: justify;
+    margin-bottom: 3.2rem;
   }
 
   & img.coverImage {
