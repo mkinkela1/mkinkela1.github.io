@@ -20,8 +20,11 @@ export const BlogCard = styled.div`
 
   & .tldr {
     color: ${(props) => props.theme.colors.lightGrey};
-    font-size: 1.6rem;
-    font-weight: lighter;
+    font-size: 2rem;
+    font-weight: 200;
+    line-height: 3.2rem;
+    letter-spacing: -0.003em;
+    text-align: justify;
   }
 
   & .readMore {
