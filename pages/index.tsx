@@ -1,13 +1,15 @@
 import Image from "next/image";
-import Linkedin from "public/linkedin.svg";
-import Github from "public/github.svg";
+import { LinkedinIcon } from "components/LinkedinIcon";
+import { GithubIcon } from "components/GithubIcon";
 import ProfilePic from "public/profilePicture.webp";
 import Link from "next/link";
 import { Container } from "components/Container";
 import { StyledMain } from "components/Main";
 import { TitleRow } from "components/TitleRow";
+import { useTheme } from "styled-components";
 
 export default function Home() {
+  const theme = useTheme();
   return (
     <Container>
       <StyledMain className="center">
@@ -18,6 +20,8 @@ export default function Home() {
             width={300}
             height={300}
             className="profilePicture"
+            placeholder="blur"
+            priority
           />
           <div className="col">
             <h1 className="title">
@@ -33,10 +37,10 @@ export default function Home() {
             href="https://www.linkedin.com/in/matteo-kinkela"
             target="_blank"
           >
-            <Image src={Linkedin} alt="LinkedIn icon" width={50} height={50} />
+            <LinkedinIcon fill={theme.colors.green} />
           </Link>
           <Link href="https://github.com/mkinkela1" target="_blank">
-            <Image src={Github} alt="Github icon" width={45} height={45} />
+            <GithubIcon fill={theme.colors.green} />
           </Link>
         </div>
       </StyledMain>

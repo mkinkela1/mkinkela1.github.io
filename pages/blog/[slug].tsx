@@ -1,4 +1,4 @@
-import { createClient } from "contentful";
+import { createClient, Entry, TagLink } from "contentful";
 import Image from "next/image";
 import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Container } from "components/Container";
 import { StyledPost } from "components/Post";
 import { StyledMain } from "components/Main";
+import { Document } from "@contentful/rich-text-types/dist/types/types";
 
 interface IParams {
   params: {
@@ -16,7 +17,7 @@ interface IParams {
 
 interface IContent {
   metadata: {
-    tags: string[];
+    tags: TagLink[];
   };
   sys: {
     id: string;
@@ -90,8 +91,10 @@ export default function Post({ ...content }: IContent) {
 
           <div className="title">{content.fields.title}</div>
           <p className="content">
-            {/*// @ts-ignore*/}
-            {documentToReactComponents(content.fields.content, options)}
+            {documentToReactComponents(
+              content.fields.content as Document,
+              options
+            )}
           </p>
         </StyledPost>
       </StyledMain>
@@ -108,10 +111,9 @@ export async function getStaticPaths() {
   const data = await client.getEntries();
 
   return {
-    // @ts-ignore
-    paths: data.items.map((post: IContent) => ({
+    paths: data.items.map(({ fields: { slug } }: Entry<any>) => ({
       params: {
-        slug: post.fields.slug,
+        slug,
       },
     })),
     fallback: false,

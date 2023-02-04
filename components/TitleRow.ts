@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const TitleRow = styled.div`
   display: flex;
   gap: 5rem;
+  flex-direction: row-reverse;
 
   & .col {
     display: flex;
