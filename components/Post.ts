@@ -41,10 +41,12 @@ export const StyledPost = styled.div`
 
     & li.content {
       margin: 0;
+      display: flex;
+      gap: 1rem;
     }
 
     & li div {
-      display: inline-flex;
+      display: inline;
       margin: 0;
     }
   }
@@ -67,7 +69,6 @@ export const StyledPost = styled.div`
   }
 
   & .content {
-    display: inline-block;
     color: ${(props) => props.theme.colors.lightGrey};
     font-size: 2rem;
     font-weight: 200;

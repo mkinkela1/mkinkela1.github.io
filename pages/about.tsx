@@ -11,9 +11,10 @@ export default function About() {
           <div className="title">About me</div>
           <p className="content">
             This page is currently{" "}
-            <span className="greenText">under construction</span>. We apologize
-            for the inconvenience and are working hard to bring you valuable
-            content as soon as possible. Thank you for your patience.
+            <span className="greenText">under construction</span>. I apologize
+            for the inconvenience. I am working diligently to bring you valuable
+            content as soon as possible. I truly appreciate your patience and
+            understanding. Thank you.
           </p>
         </StyledPost>
       </StyledMain>
