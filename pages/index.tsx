@@ -36,10 +36,15 @@ export default function Home() {
           <Link
             href="https://www.linkedin.com/in/matteo-kinkela"
             target="_blank"
+            aria-label="linkedin"
           >
             <LinkedinIcon fill={theme.colors.green} />
           </Link>
-          <Link href="https://github.com/mkinkela1" target="_blank">
+          <Link
+            href="https://github.com/mkinkela1"
+            target="_blank"
+            aria-label="github"
+          >
             <GithubIcon fill={theme.colors.green} />
           </Link>
         </div>

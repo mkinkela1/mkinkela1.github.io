@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Link from "next/link";
-import Image from "next/image";
-import MenuIcon from "public/menuIcon.svg";
+import MenuIcon from "components/MenuIcon";
 import { useState } from "react";
 import RenderWhen from "components/RenderWhen";
 import { useRouter } from "next/router";
@@ -9,16 +8,13 @@ import { useRouter } from "next/router";
 export default function Menu() {
   const [menuVisible, setMenuVisible] = useState<boolean>(true);
   const { pathname } = useRouter();
+  const theme = useTheme();
 
   return (
     <StyledMenu>
       <div className="menuContainer">
-        <Image
-          src={MenuIcon}
-          alt="menu icon"
-          width={30}
-          height={20}
-          className="menuIcon"
+        <MenuIcon
+          fill={{ fill: theme.colors.green }}
           onClick={() => setMenuVisible((prevState) => !prevState)}
         />
         <RenderWhen condition={menuVisible}>
@@ -86,7 +82,7 @@ const StyledMenu = styled.menu`
     }
   }
 
-  & img.menuIcon {
+  & .menuIcon {
     margin: 20px;
     visibility: hidden;
 

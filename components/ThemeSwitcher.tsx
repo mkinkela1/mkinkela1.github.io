@@ -12,7 +12,7 @@ export function ThemeSwitcher({ t, onClick }: IProps) {
   const theme = useTheme();
 
   return (
-    <StyledThemeSwitcher onClick={onClick}>
+    <StyledThemeSwitcher onClick={onClick} aria-label="theme-switcher">
       {t === Theme.DARK ? (
         <SunIcon fill={theme.colors.green} />
       ) : (
