@@ -1,6 +1,7 @@
 name: Deploy Next.js to GithubIcon Pages
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
   workflow_call:
